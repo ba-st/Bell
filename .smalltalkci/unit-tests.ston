@@ -1,0 +1,16 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'Bell',
+      #directory : '../source',
+      #load : [ 'CI' ],
+      #platforms : [  #pharo ]
+    }
+  ],
+  #testing : {
+    #coverage : {
+      #packages : [ 'Bell*' ],
+      #format: #lcov
+    }
+  }
+}
