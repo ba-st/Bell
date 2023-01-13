@@ -13,8 +13,10 @@ What is this thing? “the motto”, the goals, the vision.
 [![Pharo 9.0](https://img.shields.io/badge/Pharo-9.0-informational)](https://pharo.org)
 [![Pharo 10](https://img.shields.io/badge/Pharo-10-informational)](https://pharo.org)
 
-Why would I care about this thing? When to use it? For whom is it designed?
-When not to use it?
+> *Named in honour of [Jocelyn Bell Burnell](https://en.wikipedia.org/wiki/Jocelyn_Bell_Burnell), for
+> her work helping women and minorities in science after being part of the discovery of 
+> [radio pulsars](https://en.wikipedia.org/wiki/Pulsar) and not being a Nobel Prize recipient.*
+
 
 ## Quick links
 
