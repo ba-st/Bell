@@ -3,9 +3,27 @@ A LaunchpadLogRecordTest is a test class for testing the behavior of LaunchpadLo
 "
 Class {
 	#name : #LogRecordTest,
-	#superclass : #LaunchpadTest,
+	#superclass : #TestCase,
+	#instVars : [
+		'loggingAsserter'
+	],
 	#category : #'Bell-Logging-Tests'
 }
+
+{ #category : #private }
+LogRecordTest >> runMemoryLoggerDuring: aBlock assertingLogRecordsMatch: expectedLogEntries [
+
+	loggingAsserter
+		runMemoryLoggerDuring: aBlock;
+		assertLogRecordsMatch: expectedLogEntries
+]
+
+{ #category : #running }
+LogRecordTest >> setUp [
+
+	super setUp.
+	loggingAsserter := LoggingAsserter on: self
+]
 
 { #category : #tests }
 LogRecordTest >> testEmitCombinedEvents [
