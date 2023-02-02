@@ -2,7 +2,7 @@
 
 ![Logo](assets/logo.svg)
 
-What is this thing? “the motto”, the goals, the vision.
+A library providing observability capabilities such as logs and metrics.
 
 [![Unit Tests](https://github.com/ba-st/Bell/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/ba-st/Bell/actions/workflows/unit-tests.yml/badge.svg)
 [![Coverage Status](https://codecov.io/github/ba-st/Bell/coverage.svg?branch=release-candidate)](https://codecov.io/gh/ba-st/Bell/branch/release-candidate)
