@@ -1,6 +1,6 @@
 # Bell Documentation
 
-What is this thing? “the motto”, the goals, the vision.
+A library providing observability capabilities such as logs and metrics.
 
 To learn about the project, [install it](how-to/how-to-load-in-pharo.md).
 
