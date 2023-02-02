@@ -1,11 +1,13 @@
 # Bell Documentation
 
-What is this thing? “the motto”, the goals, the vision.
+A library providing observability capabilities such as logs and metrics.
 
-To learn about the project, [install it](how-to/how-to-load-in-pharo.md).
+To learn about the project, [install it](how-to/how-to-load-in-pharo.md) and
+expand your understanding over specific topics:
 
-Links to additional documentation.
-
+- **Logging**: A set of abstractions for logs.
+  See the [related documentation.](reference/Logging.md)
+  
 ---
 
 To use the project as a dependency of your project, take a look at:
