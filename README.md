@@ -35,3 +35,6 @@ To load the project in a Pharo image follow this [instructions](docs/how-to/how-
 ## Contributing
 
 Check the [Contribution Guidelines](CONTRIBUTING.md)
+---
+
+> *Icons by [Icons8](https://icons8.com/icon/qj9iREC5O6Ek/eye)*
