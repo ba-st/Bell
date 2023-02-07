@@ -13,9 +13,9 @@ A library providing observability capabilities such as logs and metrics.
 [![Pharo 9.0](https://img.shields.io/badge/Pharo-9.0-informational)](https://pharo.org)
 [![Pharo 10](https://img.shields.io/badge/Pharo-10-informational)](https://pharo.org)
 
-> *Named in honour of [Jocelyn Bell Burnell](https://en.wikipedia.org/wiki/Jocelyn_Bell_Burnell), for 
-> her work and dedication to helping women and minorities in science, and being part of the
-> discovery of [radio pulsars](https://en.wikipedia.org/wiki/Pulsar).
+> *Named in honour of [Jocelyn Bell Burnell](https://en.wikipedia.org/wiki/Jocelyn_Bell_Burnell),
+> for her work and dedication to helping women and minorities in science, and
+> being part of the discovery of [radio pulsars](https://en.wikipedia.org/wiki/Pulsar).
 
 ## Quick links
 
