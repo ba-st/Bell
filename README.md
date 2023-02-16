@@ -15,7 +15,7 @@ A library providing observability capabilities such as logs and metrics.
 
 > *Named in honour of [Jocelyn Bell Burnell](https://en.wikipedia.org/wiki/Jocelyn_Bell_Burnell),
 > for her work and dedication to helping women and minorities in science, and
-> being part of the discovery of [radio pulsars](https://en.wikipedia.org/wiki/Pulsar).
+> being part of the discovery of [radio pulsars](https://en.wikipedia.org/wiki/Pulsar).*
 
 ## Quick links
 
