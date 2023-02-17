@@ -71,6 +71,7 @@ will produce the following output when using the non-structured loggers:
 
 and the following output when using the structured loggers:
 
+<!-- markdownlint-disable line_length -->
 ```json
 {"time":"2023-02-17T09:34:48.291938-03:00","level":"INFO","message":"Receiving commands over TCP/22222","process":"Launchpad CLI"}
 {"time":"2023-02-17T09:34:48.292173-03:00","level":"INFO","message":"Obtaining configuration...","process":"Launchpad CLI"}
