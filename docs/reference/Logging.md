@@ -22,7 +22,7 @@ To emit your logs, you can use `LogRecord` by sending one of the
 
 ## Loggers
 
-Log records are finally outputted in some format by configuring a Logger handling
+Log records are finally output in some format by setting a logger to handle
 them. Bell provides the following loggers:
 
 - `StandardErrorLogger` will output the log records to `stdout`
