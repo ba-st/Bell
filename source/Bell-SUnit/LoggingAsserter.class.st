@@ -15,7 +15,7 @@ Class {
 	#category : #'Bell-SUnit'
 }
 
-{ #category : #'instace creation' }
+{ #category : #'instance creation' }
 LoggingAsserter class >> on: aTestCase [ 
 	
 	^ self new initializeOn: aTestCase
