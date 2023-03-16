@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'stream'
 	],
-	#category : #'Bell-Logging-Bell-Logging'
+	#category : #'Bell-Logging'
 }
 
 { #category : #testing }

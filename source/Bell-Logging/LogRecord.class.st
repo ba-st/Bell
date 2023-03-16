@@ -1,7 +1,7 @@
 Class {
 	#name : #LogRecord,
 	#superclass : #BeaconSignal,
-	#category : #'Bell-Logging-Bell-Logging'
+	#category : #'Bell-Logging'
 }
 
 { #category : #actions }
