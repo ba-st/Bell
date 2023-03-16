@@ -1,7 +1,7 @@
 Class {
 	#name : #StandardOutputLogger,
 	#superclass : #StandardStreamLogger,
-	#category : #'Bell-Logging-Bell-Logging'
+	#category : #'Bell-Logging'
 }
 
 { #category : #accessing }

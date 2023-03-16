@@ -1,7 +1,7 @@
 Class {
 	#name : #StandardErrorStructuredLogger,
 	#superclass : #StandardStreamStructuredLogger,
-	#category : #'Bell-Logging-Bell-Logging'
+	#category : #'Bell-Logging'
 }
 
 { #category : #accessing }
