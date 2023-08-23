@@ -76,7 +76,11 @@ MemoryLogger class >> writeFilename [
 			                   stream
 				                   << self name;
 				                   << '-';
-				                   print: LibC uniqueInstance currentProcessId;
+				                   print: ((LanguagePlatform current
+						                     globalNamed: #System
+						                     ifAbsent: [
+							                     Error signal: 'System class not found' ])
+						                    gemVersionReport at: 'processId');
 				                   << '.stgz' ] ]
 ]
 
