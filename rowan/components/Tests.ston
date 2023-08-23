@@ -1,0 +1,14 @@
+RwSimpleProjectLoadComponentV2 {
+  #name : 'Tests',
+  #condition : 'tests',
+  #projectNames : [ ],
+  #componentNames : [
+    'Deployment'
+  ],
+  #packageNames : [
+		'Bell-GS64-Extras-Tests',
+		'Bell-Logging-Tests',
+		'Bell-SUnit'
+  ],
+  #comment : ''
+}
