@@ -36,18 +36,6 @@ Class {
 	#category : #'Bell-GS64-Extras'
 }
 
-{ #category : #saving }
-MemoryLogger class >> fromStonFile: aFileReference [
-
-	| logger |
-
-	logger := aFileReference asFileReference binaryReadStreamDo: [ :bstream |
-		STON fromStream: (ZnCharacterReadStream
-			on: (GZipReadStream on: bstream)
-			encoding: 'utf8') ].
-	^logger
-]
-
 { #category : #'class initialization' }
 MemoryLogger class >> reset [
 	<script>
