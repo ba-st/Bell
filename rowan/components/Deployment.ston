@@ -1,0 +1,20 @@
+RwSimpleProjectLoadComponentV2 {
+	#name : 'Deployment',
+	#projectNames : [ ],
+	#componentNames : [ ],
+	#packageNames : [
+		'Bell-Logging',
+		'Bell-GS64-Extensions',
+		'Bell-GS64-Extras'
+	],
+	#conditionalPackageMapSpecs : {
+		'gemstone' : {
+			'allusers' : {
+				#packageNameToPlatformPropertiesMap : {
+    				'Bell-GS64-Extensions' : { 'symbolDictName' : 'Globals' }
+				}
+    		}
+	 	}
+	},
+	#comment : ''
+}

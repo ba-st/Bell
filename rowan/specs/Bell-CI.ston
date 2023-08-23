@@ -1,0 +1,19 @@
+RwLoadSpecificationV2 {
+  #specName: 'Bell-CI',
+  #projectName : 'Bell',
+  #diskUrl : '/opt/gemstone/projects/Bell',
+  #projectSpecFile : 'rowan/project.ston',
+  #componentNames : [
+    'Tests'
+  ],
+  #platformProperties : {
+    'gemstone' : {
+      'allusers' : { #defaultSymbolDictName : 'Bell' }
+    }
+  },
+  #customConditionalAttributes : [
+    'tests',
+    'sunit'
+  ],
+  #comment : 'Loading spec for the continuous integration setup'
+}
