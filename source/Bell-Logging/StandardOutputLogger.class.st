@@ -8,7 +8,9 @@ Class {
 StandardOutputLogger class >> instance [
 
 	^ super instance
-		  initializeOn: Stdio stdout;
+		  initializeOn: (LanguagePlatform current
+				   globalNamed: #GsFile
+				   ifAbsent: [ Error signal: 'GsFile class not found' ]) stdout;
 		  yourself
 ]
 
