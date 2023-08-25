@@ -15,7 +15,7 @@ Class {
 	#instVars : [
 		'message'
 	],
-	#category : #'Bell-GS64-Extras'
+	#category : #'Beacon-GS64'
 }
 
 { #category : #'instance creation' }

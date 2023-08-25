@@ -1,7 +1,7 @@
 Class {
 	#name : #MemoryLoggerTest,
 	#superclass : #TestCase,
-	#category : #'Bell-GS64-Extras-Tests'
+	#category : #'Beacon-GS64-Tests'
 }
 
 { #category : #testing }

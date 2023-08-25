@@ -1,7 +1,7 @@
 Class {
 	#name : #WrapperSignalTest,
 	#superclass : #TestCase,
-	#category : #'Bell-GS64-Extras-Tests'
+	#category : #'Beacon-GS64-Tests'
 }
 
 { #category : #tests }
