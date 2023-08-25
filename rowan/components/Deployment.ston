@@ -3,14 +3,15 @@ RwSimpleProjectLoadComponentV2 {
 	#projectNames : [ ],
 	#componentNames : [ ],
 	#packageNames : [
-		'Bell-Logging',
+		'Beacon-GS64',
 		'Bell-GS64-Extensions',
-		'Bell-GS64-Extras'
+		'Bell-Logging'
 	],
 	#conditionalPackageMapSpecs : {
 		'gemstone' : {
 			'allusers' : {
 				#packageNameToPlatformPropertiesMap : {
+    				'Beacon-GS64' : { 'symbolDictName' : 'BeaconCore' },
     				'Bell-GS64-Extensions' : { 'symbolDictName' : 'Globals' }
 				}
     		}

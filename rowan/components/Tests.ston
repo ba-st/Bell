@@ -6,9 +6,18 @@ RwSimpleProjectLoadComponentV2 {
     'Deployment'
   ],
   #packageNames : [
-		'Bell-GS64-Extras-Tests',
+		'Beacon-GS64-Tests',
 		'Bell-Logging-Tests',
 		'Bell-SUnit'
   ],
+  #conditionalPackageMapSpecs : {
+		'gemstone' : {
+			'allusers' : {
+				#packageNameToPlatformPropertiesMap : {
+    				'Beacon-GS64-Tests' : { 'symbolDictName' : 'BeaconCore' }
+				}
+    	}
+	 	}
+	},
   #comment : ''
 }
