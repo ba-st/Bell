@@ -90,14 +90,6 @@ MemoryLogger class >> writeFilename: aFilename [
 	WriteFilename := aFilename
 ]
 
-{ #category : #private }
-MemoryLogger class >> writeLoop [
-	"Write the default instance out to a file every WritePeriod"
-
-	[ self instance saveStonFile: self writeFilename.
-	self writePeriod wait ] repeat
-]
-
 { #category : #accessing }
 MemoryLogger class >> writePeriod [
 
@@ -150,16 +142,4 @@ MemoryLogger >> reset [
 	affecting the running status of the logger"
 	mutex critical: [
 		recordings := OrderedCollection new ]
-]
-
-{ #category : #'ston persistence' }
-MemoryLogger >> saveStonFile: aFileReference [
-
-	"Save the receiver to the supplied file name"
-
-	| stream |
-	stream := ZnCharacterWriteStream
-		          on: (GZipWriteStream on: aFileReference asFileReference nextVersion binaryWriteStream)
-		          encoding: 'utf8'.
-	[ STON put: self onStreamPretty: stream ] ensure: [ stream close ]
 ]
