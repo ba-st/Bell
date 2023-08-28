@@ -10,11 +10,7 @@ StandardErrorStructuredLogger class >> instance [
 	 (returns nil when connected via GemBuilder on VAST64 for Windows)"
 
 	^ super instance
-		  initializeOn: ((LanguagePlatform current
-				    globalNamed: #GsFile
-				    ifAbsent: [ Error signal: 'GsFile class not found' ])
-				   _getStdFile: 2
-				   onClient: false);
+		  initializeOn: Stdio stderr;
 		  yourself
 ]
 
