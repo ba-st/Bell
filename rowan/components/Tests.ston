@@ -14,7 +14,9 @@ RwSimpleProjectLoadComponentV2 {
 		'gemstone' : {
 			'allusers' : {
 				#packageNameToPlatformPropertiesMap : {
-    				'Beacon-GS64-Tests' : { 'symbolDictName' : 'BeaconCore' }
+    				'Beacon-GS64-Tests' : { 'symbolDictName' : 'BeaconCore' },
+    				'Bell-Logging-Tests' : { 'symbolDictName' : 'Bell' },
+    				'Bell-SUnit' : { 'symbolDictName' : 'Bell' }
 				}
     	}
 	 	}
