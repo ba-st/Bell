@@ -4,12 +4,6 @@ I am a facade class to access standard output streams, equivalent to the class o
 Class {
 	#name : #Stdio,
 	#superclass : #Object,
-	#classVars : [
-		'CreateWriteStreamBlock',
-		'Stderr',
-		'Stdin',
-		'Stdout'
-	],
 	#category : #'Bell-GS64-Extensions'
 }
 
