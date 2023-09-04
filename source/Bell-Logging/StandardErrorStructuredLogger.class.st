@@ -6,8 +6,6 @@ Class {
 
 { #category : #accessing }
 StandardErrorStructuredLogger class >> instance [
-	"Avoid using GsFile>>stderr for debugging purposes
-	 (returns nil when connected via GemBuilder on VAST64 for Windows)"
 
 	^ super instance
 		  initializeOn: Stdio stderr;
