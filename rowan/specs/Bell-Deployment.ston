@@ -1,0 +1,9 @@
+RwLoadSpecificationV2 {
+  #specName: 'Bell-Deployment',
+  #projectName : 'Bell',
+  #diskUrl : '/opt/gemstone/projects/Bell',
+  #projectSpecFile : 'rowan/project.ston',
+  #componentNames : [
+    'Deployment'
+  ]
+}
