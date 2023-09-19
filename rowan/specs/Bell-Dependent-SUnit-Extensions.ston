@@ -1,0 +1,9 @@
+RwLoadSpecificationV2 {
+  #specName: 'Bell-Dependent-SUnit-Extensions',
+  #projectName : 'Bell',
+  #diskUrl : 'Bell',
+  #projectSpecFile : 'rowan/project.ston',
+  #componentNames : [
+    'Dependent-SUnit-Extensions'
+  ]
+}

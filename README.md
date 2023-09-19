@@ -9,6 +9,7 @@ A library providing observability capabilities such as logs and metrics.
 [![Coverage Status](https://codecov.io/github/ba-st/Bell/coverage.svg?branch=release-candidate)](https://codecov.io/gh/ba-st/Bell/branch/release-candidate)
 
 [![Baseline Groups](https://github.com/ba-st/Bell/actions/workflows/loading-groups.yml/badge.svg)](https://github.com/ba-st/Bell/actions/workflows/loading-groups.yml)
+[![GS64 Components](https://github.com/ba-st/Bell/actions/workflows/loading-gs64-components.yml/badge.svg)](https://github.com/ba-st/Bell/actions/workflows/loading-gs64-components.yml)
 [![Markdown Lint](https://github.com/ba-st/Bell/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/ba-st/Bell/actions/workflows/markdown-lint.yml)
 
 [![GitHub release](https://img.shields.io/github/release/ba-st/Bell.svg)](https://github.com/ba-st/Bell/releases/latest)
