@@ -19,7 +19,7 @@ A library providing observability capabilities such as logs and metrics.
 
 [![GS64 3.7.0](https://img.shields.io/badge/GS64-3.7.0-informational)](https://gemtalksystems.com/products/gs64/)
 
-> *Named in honour of [Jocelyn Bell Burnell](https://en.wikipedia.org/wiki/Jocelyn_Bell_Burnell),
+> *Named in honor of [Jocelyn Bell Burnell](https://en.wikipedia.org/wiki/Jocelyn_Bell_Burnell),
 > for her work and dedication to helping women and minorities in science, and
 > being part of the discovery of [radio pulsars](https://en.wikipedia.org/wiki/Pulsar).*
 
