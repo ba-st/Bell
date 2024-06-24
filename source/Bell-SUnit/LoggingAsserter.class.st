@@ -28,6 +28,20 @@ LoggingAsserter >> assertLogRecordsMatch: expectedLogEntries [
 		testCase assert: ( record printString includesSubstring: expectedLogEntry ) ]
 ]
 
+{ #category : #asserting }
+LoggingAsserter >> assertLogRecordsMatchRegexes: regexExpressions [
+
+	memoryLogger recordings with: regexExpressions do: [ :record :regexExpression |
+		| regexWithTimestamp |
+
+		regexWithTimestamp := '\d{4}-\d{2}-\d{2}T\d{2}\:\d{2}\:\d{2}\.\d+(\+|-)(\d+\:\d+) <1s>' expandMacrosWith:
+			                      regexExpression.
+		testCase assert: ( record printString matchesRegex: regexWithTimestamp )
+			description:
+			( '<1s> does not match <2s>' expandMacrosWith: record printString with: regexWithTimestamp )
+		]
+]
+
 { #category : #initialization }
 LoggingAsserter >> initializeOn: aTestCase [ 
 
