@@ -5,15 +5,22 @@
 A library providing observability capabilities such as logs and metrics.
 
 [![Unit Tests](https://github.com/ba-st/Bell/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/ba-st/Bell/actions/workflows/unit-tests.yml/badge.svg)
+[![GS64 Unit Tests](https://github.com/ba-st/Bell/actions/workflows/unit-tests-gs64.yml/badge.svg)](https://github.com/ba-st/Bell/actions/workflows/unit-tests-gs64.yml/badge.svg)
 [![Coverage Status](https://codecov.io/github/ba-st/Bell/coverage.svg?branch=release-candidate)](https://codecov.io/gh/ba-st/Bell/branch/release-candidate)
+
 [![Baseline Groups](https://github.com/ba-st/Bell/actions/workflows/loading-groups.yml/badge.svg)](https://github.com/ba-st/Bell/actions/workflows/loading-groups.yml)
+[![GS64 Components](https://github.com/ba-st/Bell/actions/workflows/loading-gs64-components.yml/badge.svg)](https://github.com/ba-st/Bell/actions/workflows/loading-gs64-components.yml)
 [![Markdown Lint](https://github.com/ba-st/Bell/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/ba-st/Bell/actions/workflows/markdown-lint.yml)
 
 [![GitHub release](https://img.shields.io/github/release/ba-st/Bell.svg)](https://github.com/ba-st/Bell/releases/latest)
 [![Pharo 9.0](https://img.shields.io/badge/Pharo-9.0-informational)](https://pharo.org)
 [![Pharo 10](https://img.shields.io/badge/Pharo-10-informational)](https://pharo.org)
+[![Pharo 11](https://img.shields.io/badge/Pharo-11-informational)](https://pharo.org)
 
-> *Named in honour of [Jocelyn Bell Burnell](https://en.wikipedia.org/wiki/Jocelyn_Bell_Burnell),
+[![GS64 3.7.0](https://img.shields.io/badge/GS64-3.7.0-informational)](https://gemtalksystems.com/products/gs64/)
+[![GS64 3.7.1](https://img.shields.io/badge/GS64-3.7.1-informational)](https://gemtalksystems.com/products/gs64/)
+
+> *Named in honor of [Jocelyn Bell Burnell](https://en.wikipedia.org/wiki/Jocelyn_Bell_Burnell),
 > for her work and dedication to helping women and minorities in science, and
 > being part of the discovery of [radio pulsars](https://en.wikipedia.org/wiki/Pulsar).*
 
@@ -30,7 +37,7 @@ A library providing observability capabilities such as logs and metrics.
 
 ## Installation
 
-To load the project in a Pharo image follow this [instructions](docs/how-to/how-to-load-in-pharo.md).
+To load the project in a Pharo image follow these [instructions](docs/how-to/how-to-load-in-pharo.md).
 
 ## Contributing
 
