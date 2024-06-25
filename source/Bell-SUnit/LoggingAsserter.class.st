@@ -59,9 +59,4 @@ LoggingAsserter >> runMemoryLoggerDuring: aBlockClosure [
 LoggingAsserter >> stopLoggers [
 
 	memoryLogger reset.
-
-	StandardStreamLogger onStandardOutput stop.
-	StandardStreamLogger onStandardError stop.
-	StandardErrorStructuredLogger onStandardOutput stop.
-	StandardErrorStructuredLogger onStandardError stop
 ]
