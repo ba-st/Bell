@@ -22,16 +22,16 @@ LoggingAsserter class >> on: aTestCase [
 ]
 
 { #category : #asserting }
-LoggingAsserter >> assertLogRecordsMatch: expectedLogEntries [
+LoggingAsserter >> assertLogRecordsMatch: anExpectedLogEntryCollection [
 
-	memoryLogger recordings with: expectedLogEntries do: [ :record :expectedLogEntry | 
+	memoryLogger recordings with: anExpectedLogEntryCollection do: [ :record :expectedLogEntry | 
 		testCase assert: ( record printString includesSubstring: expectedLogEntry ) ]
 ]
 
 { #category : #asserting }
-LoggingAsserter >> assertLogRecordsMatchRegexes: regexExpressions [
+LoggingAsserter >> assertLogRecordsMatchUsing: aRegexCollection [
 
-  memoryLogger recordings with: regexExpressions do: [ :record :regexExpression |
+  memoryLogger recordings with: aRegexCollection do: [ :record :regexExpression |
       testCase
         assert: ( record printString matchesRegex: regexExpression )
         description:

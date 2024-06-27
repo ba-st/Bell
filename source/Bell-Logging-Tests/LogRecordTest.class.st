@@ -11,19 +11,19 @@ Class {
 }
 
 { #category : #private }
-LogRecordTest >> runMemoryLoggerDuring: aBlock assertingLogRecordsMatch: expectedLogEntries [
+LogRecordTest >> runMemoryLoggerDuring: aBlock assertingLogRecordsMatch: anExpectedLogEntryCollection [
 
 	loggingAsserter
 		runMemoryLoggerDuring: aBlock;
-		assertLogRecordsMatch: expectedLogEntries
+		assertLogRecordsMatch: anExpectedLogEntryCollection
 ]
 
 { #category : #private }
-LogRecordTest >> runMemoryLoggerDuring: aBlock assertingLogRecordsMatchRegexes: expectedLogEntries [
+LogRecordTest >> runMemoryLoggerDuring: aBlock assertingLogRecordsMatchRegexes: aRegexCollection [
 
   loggingAsserter
     runMemoryLoggerDuring: aBlock;
-    assertLogRecordsMatchRegexes: expectedLogEntries
+    assertLogRecordsMatchUsing: aRegexCollection
 ]
 
 { #category : #running }
