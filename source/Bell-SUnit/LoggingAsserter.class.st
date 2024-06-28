@@ -22,10 +22,21 @@ LoggingAsserter class >> on: aTestCase [
 ]
 
 { #category : #asserting }
-LoggingAsserter >> assertLogRecordsMatch: expectedLogEntries [
+LoggingAsserter >> assertLogRecordsMatch: anExpectedLogEntryCollection [
 
-	memoryLogger recordings with: expectedLogEntries do: [ :record :expectedLogEntry | 
+	memoryLogger recordings with: anExpectedLogEntryCollection do: [ :record :expectedLogEntry | 
 		testCase assert: ( record printString includesSubstring: expectedLogEntry ) ]
+]
+
+{ #category : #asserting }
+LoggingAsserter >> assertLogRecordsMatchUsing: aRegexCollection [
+
+  memoryLogger recordings with: aRegexCollection do: [ :record :regexExpression |
+      testCase
+        assert: ( record printString matchesRegex: regexExpression )
+        description:
+        ( '<1s> does not match <2s>' expandMacrosWith: record printString with: regexExpression )
+    ]
 ]
 
 { #category : #initialization }
@@ -45,9 +56,4 @@ LoggingAsserter >> runMemoryLoggerDuring: aBlockClosure [
 LoggingAsserter >> stopLoggers [
 
 	memoryLogger reset.
-
-	StandardStreamLogger onStandardOutput stop.
-	StandardStreamLogger onStandardError stop.
-	StandardErrorStructuredLogger onStandardOutput stop.
-	StandardErrorStructuredLogger onStandardError stop
 ]

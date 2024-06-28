@@ -11,11 +11,19 @@ Class {
 }
 
 { #category : #private }
-LogRecordTest >> runMemoryLoggerDuring: aBlock assertingLogRecordsMatch: expectedLogEntries [
+LogRecordTest >> runMemoryLoggerDuring: aBlock assertingLogRecordsMatch: anExpectedLogEntryCollection [
 
 	loggingAsserter
 		runMemoryLoggerDuring: aBlock;
-		assertLogRecordsMatch: expectedLogEntries
+		assertLogRecordsMatch: anExpectedLogEntryCollection
+]
+
+{ #category : #private }
+LogRecordTest >> runMemoryLoggerDuring: aBlock assertingLogRecordsMatchRegexes: aRegexCollection [
+
+  loggingAsserter
+    runMemoryLoggerDuring: aBlock;
+    assertLogRecordsMatchUsing: aRegexCollection
 ]
 
 { #category : #running }
@@ -45,6 +53,28 @@ LogRecordTest >> testEmitCombinedEvents [
 				'[INFO] Setting up data'
 				'[WARNING] Missing data, using default.'
 			   '[ERROR] Starting app... [FAILED]' )
+]
+
+{ #category : #tests }
+LogRecordTest >> testEmitCombinedEventsWithRegex [
+
+	self
+		runMemoryLoggerDuring: [ 
+			self
+				should: [ 
+					LogRecord emitInfo: 'Starting app' during: [ 
+						LogRecord emitInfo: 'Setting up data'.
+						LogRecord emitWarning: 'Missing data, using default.'.
+						Error signal
+						]
+					]
+				raise: Error
+			]
+		assertingLogRecordsMatchRegexes:
+			#( '.+ \[INFO].+\.{0,3}'
+				'.+ \[INFO].+\.{0,1}'
+				'.+ \[WARNING].+\.{0,1}'
+			   '.+ \[ERROR].+( \[FAILED\])?\.{0,1}' )
 ]
 
 { #category : #tests }
