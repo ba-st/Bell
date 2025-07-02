@@ -17,7 +17,6 @@ A library providing observability capabilities such as logs and metrics.
 [![Pharo 10](https://img.shields.io/badge/Pharo-10-informational)](https://pharo.org)
 [![Pharo 11](https://img.shields.io/badge/Pharo-11-informational)](https://pharo.org)
 
-[![GS64 3.7.0](https://img.shields.io/badge/GS64-3.7.0-informational)](https://gemtalksystems.com/products/gs64/)
 [![GS64 3.7.1](https://img.shields.io/badge/GS64-3.7.1-informational)](https://gemtalksystems.com/products/gs64/)
 
 > *Named in honor of [Jocelyn Bell Burnell](https://en.wikipedia.org/wiki/Jocelyn_Bell_Burnell),
