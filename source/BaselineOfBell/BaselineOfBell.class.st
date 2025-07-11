@@ -23,15 +23,15 @@ BaselineOfBell >> baseline: spec [
 BaselineOfBell >> setUpDependencies: spec [
 			
 	spec
-		baseline: 'NeoJSON' with: [ spec repository: 'github://svenvc/NeoJSON:master/repository' ];
-		project: 'NeoJSON-Core' copyFrom: 'NeoJSON' with: [ spec loads: 'core' ].
+		baseline: 'NeoJSON' with: [ spec repository: 'github://ba-st-dependencies/NeoJSON:v20' ];
+		project: 'NeoJSON-Deployment' copyFrom: 'NeoJSON' with: [ spec loads: 'Deployment' ].
 ]
 
 { #category : #baselines }
 BaselineOfBell >> setUpDeploymentPackages: spec [
 
 	spec
-		package: 'Bell-Logging' with: [ spec requires: 'NeoJSON-Core' ];
+		package: 'Bell-Logging' with: [ spec requires: 'NeoJSON-Deployment' ];
 		group: 'Deployment' with: 'Bell-Logging'.
 
 ]
