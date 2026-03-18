@@ -2,15 +2,16 @@
 A LaunchpadLogRecordTest is a test class for testing the behavior of LaunchpadLogRecord
 "
 Class {
-	#name : #LogRecordTest,
-	#superclass : #TestCase,
+	#name : 'LogRecordTest',
+	#superclass : 'TestCase',
 	#instVars : [
 		'loggingAsserter'
 	],
-	#category : #'Bell-Logging-Tests'
+	#category : 'Bell-Logging-Tests',
+	#package : 'Bell-Logging-Tests'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 LogRecordTest >> runMemoryLoggerDuring: aBlock assertingLogRecordsMatch: anExpectedLogEntryCollection [
 
 	loggingAsserter
@@ -18,7 +19,7 @@ LogRecordTest >> runMemoryLoggerDuring: aBlock assertingLogRecordsMatch: anExpec
 		assertLogRecordsMatch: anExpectedLogEntryCollection
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 LogRecordTest >> runMemoryLoggerDuring: aBlock assertingLogRecordsMatchRegexes: aRegexCollection [
 
   loggingAsserter
@@ -26,14 +27,21 @@ LogRecordTest >> runMemoryLoggerDuring: aBlock assertingLogRecordsMatchRegexes: 
     assertLogRecordsMatchUsing: aRegexCollection
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 LogRecordTest >> setUp [
 
 	super setUp.
 	loggingAsserter := LoggingAsserter on: self
 ]
 
-{ #category : #tests }
+{ #category : 'running' }
+LogRecordTest >> tearDown [
+
+  loggingAsserter stopLoggers.
+  super tearDown
+]
+
+{ #category : 'tests' }
 LogRecordTest >> testEmitCombinedEvents [
 
 	self
@@ -55,7 +63,7 @@ LogRecordTest >> testEmitCombinedEvents [
 			   '[ERROR] Starting app... [FAILED]' )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LogRecordTest >> testEmitCombinedEventsWithRegex [
 
 	self
@@ -77,7 +85,7 @@ LogRecordTest >> testEmitCombinedEventsWithRegex [
 			   '.+ \[ERROR].+( \[FAILED\])?\.{0,1}' )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LogRecordTest >> testEmitDebug [
 
 	self
@@ -85,7 +93,7 @@ LogRecordTest >> testEmitDebug [
 		assertingLogRecordsMatch: #( '[DEBUG] Ouch!' )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LogRecordTest >> testEmitError [
 
 	self
@@ -93,7 +101,7 @@ LogRecordTest >> testEmitError [
 		assertingLogRecordsMatch: #( '[ERROR] Ouch!' )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LogRecordTest >> testEmitInfo [
 
 	self
@@ -101,7 +109,7 @@ LogRecordTest >> testEmitInfo [
 		assertingLogRecordsMatch: #( '[INFO] Starting' )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LogRecordTest >> testEmitInfoDuring [
 
 	| wasEvaluated |
@@ -115,7 +123,7 @@ LogRecordTest >> testEmitInfoDuring [
 	self assert: wasEvaluated
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LogRecordTest >> testEmitInfoDuringWhenActionFails [
 
 	self
@@ -126,7 +134,7 @@ LogRecordTest >> testEmitInfoDuringWhenActionFails [
 			'[ERROR] Starting... [FAILED]' )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LogRecordTest >> testEmitStructuredDebuggingInfo [
 
 	self
@@ -138,7 +146,7 @@ LogRecordTest >> testEmitStructuredDebuggingInfo [
 		assertingLogRecordsMatch: #( '[DEBUG] Ouch! {"errorCode":1234}' )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LogRecordTest >> testEmitStructuredTraceInfo [
 
 	self
@@ -149,7 +157,7 @@ LogRecordTest >> testEmitStructuredTraceInfo [
 		assertingLogRecordsMatch: #( '[TRACE] Ouch! {"errorCode":1234}' )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LogRecordTest >> testEmitTrace [
 
 	self
@@ -157,7 +165,7 @@ LogRecordTest >> testEmitTrace [
 		assertingLogRecordsMatch: #( '[TRACE] Ouch!' )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LogRecordTest >> testEmitWarning [
 
 	self
@@ -165,7 +173,7 @@ LogRecordTest >> testEmitWarning [
 		assertingLogRecordsMatch: #( '[WARNING] Missing value, using X as default' )
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 LogRecordTest >> testPrintOneLineJsonOn [
 
 	"Tests structured JSON formatting for log records.

@@ -2,12 +2,13 @@
 A StandardStreamLoggerTest is a test class for testing the behavior of StandardStreamLogger
 "
 Class {
-	#name : #StandardStreamLoggerTest,
-	#superclass : #TestCase,
-	#category : #'Bell-Logging-Tests'
+	#name : 'StandardStreamLoggerTest',
+	#superclass : 'TestCase',
+	#category : 'Bell-Logging-Tests',
+	#package : 'Bell-Logging-Tests'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 StandardStreamLoggerTest >> testStandardError [
 
 	| record |
@@ -17,14 +18,14 @@ StandardStreamLoggerTest >> testStandardError [
 	StandardStreamLogger onStandardError nextPut: record
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 StandardStreamLoggerTest >> testStandardErrorStreamLogger [
 
 	StandardStreamLogger onStandardError runFor: LogRecord
 		during: [ LogRecord emitInfo: 'Test' ]
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 StandardStreamLoggerTest >> testStandardOutput [
 
 	| record |
@@ -34,7 +35,7 @@ StandardStreamLoggerTest >> testStandardOutput [
 	StandardStreamLogger onStandardOutput nextPut: record
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 StandardStreamLoggerTest >> testStandardOutputStreamLogger [
 
 	StandardStreamLogger onStandardOutput runFor: LogRecord
