@@ -6,29 +6,30 @@ My intention is to be used in composition relations with other tests that needs 
 Users need to provide a logger.
 "
 Class {
-	#name : #LoggingAsserter,
-	#superclass : #Object,
+	#name : 'LoggingAsserter',
+	#superclass : 'Object',
 	#instVars : [
 		'memoryLogger',
 		'testCase'
 	],
-	#category : #'Bell-SUnit'
+	#category : 'Bell-SUnit',
+	#package : 'Bell-SUnit'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 LoggingAsserter class >> on: aTestCase [ 
 	
 	^ self new initializeOn: aTestCase
 ]
 
-{ #category : #asserting }
+{ #category : 'asserting' }
 LoggingAsserter >> assertLogRecordsMatch: anExpectedLogEntryCollection [
 
 	memoryLogger recordings with: anExpectedLogEntryCollection do: [ :record :expectedLogEntry | 
 		testCase assert: ( record printString includesSubstring: expectedLogEntry ) ]
 ]
 
-{ #category : #asserting }
+{ #category : 'asserting' }
 LoggingAsserter >> assertLogRecordsMatchUsing: aRegexCollection [
 
   memoryLogger recordings with: aRegexCollection do: [ :record :regexExpression |
@@ -39,21 +40,21 @@ LoggingAsserter >> assertLogRecordsMatchUsing: aRegexCollection [
     ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 LoggingAsserter >> initializeOn: aTestCase [ 
 
 	memoryLogger := MemoryLogger new.
 	testCase := aTestCase
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 LoggingAsserter >> runMemoryLoggerDuring: aBlockClosure [
 
-	memoryLogger runDuring: aBlockClosure
+  memoryLogger runDuring: aBlockClosure
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 LoggingAsserter >> stopLoggers [
 
-	memoryLogger reset.
+  memoryLogger reset
 ]

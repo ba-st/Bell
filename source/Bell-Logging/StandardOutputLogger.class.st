@@ -1,10 +1,11 @@
 Class {
-	#name : #StandardOutputLogger,
-	#superclass : #StandardStreamLogger,
-	#category : #'Bell-Logging'
+	#name : 'StandardOutputLogger',
+	#superclass : 'StandardStreamLogger',
+	#category : 'Bell-Logging',
+	#package : 'Bell-Logging'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StandardOutputLogger class >> instance [
 
 	^ super instance
@@ -12,7 +13,7 @@ StandardOutputLogger class >> instance [
 		  yourself
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StandardOutputLogger >> initializeOn: standardStream [
 
 	self name: 'stdout'.

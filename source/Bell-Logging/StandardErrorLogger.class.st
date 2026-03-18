@@ -1,10 +1,11 @@
 Class {
-	#name : #StandardErrorLogger,
-	#superclass : #StandardStreamLogger,
-	#category : #'Bell-Logging'
+	#name : 'StandardErrorLogger',
+	#superclass : 'StandardStreamLogger',
+	#category : 'Bell-Logging',
+	#package : 'Bell-Logging'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StandardErrorLogger class >> instance [
 
 	^ super instance
@@ -12,7 +13,7 @@ StandardErrorLogger class >> instance [
 		  yourself
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StandardErrorLogger >> initializeOn: standardStream [
 
 	self name: 'stderr'.

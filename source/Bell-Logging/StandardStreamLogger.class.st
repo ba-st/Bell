@@ -1,39 +1,40 @@
 Class {
-	#name : #StandardStreamLogger,
-	#superclass : #SignalLogger,
+	#name : 'StandardStreamLogger',
+	#superclass : 'SignalLogger',
 	#instVars : [
 		'stream'
 	],
-	#category : #'Bell-Logging'
+	#category : 'Bell-Logging',
+	#package : 'Bell-Logging'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 StandardStreamLogger class >> isAbstract [
 
 	<ignoreForCoverage>
 	^ self = StandardStreamLogger
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 StandardStreamLogger class >> onStandardError [
 
 	^ StandardErrorLogger instance
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 StandardStreamLogger class >> onStandardOutput [
 
 	^ StandardOutputLogger instance
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StandardStreamLogger >> initializeOn: standardStream [
 
 	stream := ZnNewLineWriterStream on: ( ZnCharacterWriteStream on: standardStream encoding: 'utf8' ).
 	stream forPlatformLineEnding
 ]
 
-{ #category : #utilities }
+{ #category : 'logging' }
 StandardStreamLogger >> nextPut: aSignal [
 
 	aSignal printOneLineOn: stream.
