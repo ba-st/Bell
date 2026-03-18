@@ -1,39 +1,40 @@
 Class {
-	#name : #StandardStreamStructuredLogger,
-	#superclass : #SignalLogger,
+	#name : 'StandardStreamStructuredLogger',
+	#superclass : 'SignalLogger',
 	#instVars : [
 		'stream'
 	],
-	#category : #'Bell-Logging'
+	#category : 'Bell-Logging',
+	#package : 'Bell-Logging'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 StandardStreamStructuredLogger class >> isAbstract [
 
 	<ignoreForCoverage>
 	^ self = StandardStreamStructuredLogger
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 StandardStreamStructuredLogger class >> onStandardError [
 
 	^ StandardErrorStructuredLogger instance
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 StandardStreamStructuredLogger class >> onStandardOutput [
 
 	^ StandardOutputStructuredLogger instance
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StandardStreamStructuredLogger >> initializeOn: standardStream [
 
 	stream := ZnNewLineWriterStream on: ( ZnCharacterWriteStream on: standardStream encoding: 'utf8' ).
 	stream forPlatformLineEnding
 ]
 
-{ #category : #utilities }
+{ #category : 'logging' }
 StandardStreamStructuredLogger >> nextPut: aSignal [
 
 	aSignal printOneLineJsonOn: stream.

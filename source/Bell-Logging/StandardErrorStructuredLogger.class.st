@@ -1,10 +1,11 @@
 Class {
-	#name : #StandardErrorStructuredLogger,
-	#superclass : #StandardStreamStructuredLogger,
-	#category : #'Bell-Logging'
+	#name : 'StandardErrorStructuredLogger',
+	#superclass : 'StandardStreamStructuredLogger',
+	#category : 'Bell-Logging',
+	#package : 'Bell-Logging'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 StandardErrorStructuredLogger class >> instance [
 
 	^ super instance
@@ -12,7 +13,7 @@ StandardErrorStructuredLogger class >> instance [
 		  yourself
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 StandardErrorStructuredLogger >> initializeOn: standardStream [
 
 	self name: 'stderr-json'.

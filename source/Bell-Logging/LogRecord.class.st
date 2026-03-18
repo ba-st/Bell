@@ -1,16 +1,17 @@
 Class {
-	#name : #LogRecord,
-	#superclass : #BeaconSignal,
-	#category : #'Bell-Logging'
+	#name : 'LogRecord',
+	#superclass : 'BeaconSignal',
+	#category : 'Bell-Logging',
+	#package : 'Bell-Logging'
 }
 
-{ #category : #actions }
+{ #category : 'actions' }
 LogRecord class >> emitDebuggingInfo: aString [
 
 	^ self emitStructuredDebuggingInfo: aString with: [  ]
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 LogRecord class >> emitError: aString [
 
 	^ ( self withMessage: aString andStructuredDataBy: [  ] )
@@ -18,13 +19,13 @@ LogRecord class >> emitError: aString [
 		  emit
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 LogRecord class >> emitInfo: aString [
 
 	^ ( self withMessage: aString andStructuredDataBy: [  ] ) emit
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 LogRecord class >> emitInfo: aString during: aBlock [
 
 	self emitInfo: aString , '...'.
@@ -34,7 +35,7 @@ LogRecord class >> emitInfo: aString during: aBlock [
 	] ifCurtailed: [ self emitError: aString , '... [FAILED]' ]
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 LogRecord class >> emitStructuredDebuggingInfo: aString with: aBlock [
 
 	^ ( self withMessage: aString andStructuredDataBy: aBlock )
@@ -42,7 +43,7 @@ LogRecord class >> emitStructuredDebuggingInfo: aString with: aBlock [
 		  emit
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 LogRecord class >> emitStructuredTraceInfo: aString with: aBlock [
 
 	^ ( self withMessage: aString andStructuredDataBy: aBlock )
@@ -50,13 +51,13 @@ LogRecord class >> emitStructuredTraceInfo: aString with: aBlock [
 		  emit
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 LogRecord class >> emitTraceInfo: aString [
 
 	^ self emitStructuredTraceInfo: aString with: [  ]
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 LogRecord class >> emitWarning: aString [
 
 	^ ( self withMessage: aString andStructuredDataBy: [  ] )
@@ -64,37 +65,37 @@ LogRecord class >> emitWarning: aString [
 		  emit
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 LogRecord class >> withMessage: aString andStructuredDataBy: aBlock [
 
 	^ self new initializeWithMessage: aString andStructuredDataBy: aBlock
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 LogRecord >> beError [
 
 	self properties at: #logLevel put: 'ERROR'
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 LogRecord >> beForDebugging [
 
 	self properties at: #logLevel put: 'DEBUG'
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 LogRecord >> beForTracing [
 
 	self properties at: #logLevel put: 'TRACE'
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 LogRecord >> beWarning [
 
 	self properties at: #logLevel put: 'WARNING'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 LogRecord >> initializeWithMessage: aString andStructuredDataBy: aBlock [
 
 	| data |
@@ -105,25 +106,25 @@ LogRecord >> initializeWithMessage: aString andStructuredDataBy: aBlock [
 	self properties at: #data put: data
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 LogRecord >> isInformational [
 
 	^ #( 'INFO' 'TRACE' 'DEBUG' ) includes: self logLevel
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LogRecord >> logLevel [
 
 	^ self properties at: #logLevel ifAbsent: [ 'INFO' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LogRecord >> messageText [
 
 	^ self properties at: #messageText
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 LogRecord >> printOneLineContentsOn: stream [
 
 	stream nextPutAll: self messageText.
@@ -134,7 +135,7 @@ LogRecord >> printOneLineContentsOn: stream [
 		]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 LogRecord >> printOneLineJsonOn: stream [
 
 	| json |
@@ -151,7 +152,7 @@ LogRecord >> printOneLineJsonOn: stream [
 	stream nextPutAll: ( NeoJSONWriter toString: json )
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 LogRecord >> printOneLineOn: stream [
 
 	stream

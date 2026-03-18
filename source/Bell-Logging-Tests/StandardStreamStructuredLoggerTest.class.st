@@ -2,12 +2,13 @@
 A StandardStreamStructuredLoggerTest is a test class for testing the behavior of StandardStreamStructuredLogger
 "
 Class {
-	#name : #StandardStreamStructuredLoggerTest,
-	#superclass : #TestCase,
-	#category : #'Bell-Logging-Tests'
+	#name : 'StandardStreamStructuredLoggerTest',
+	#superclass : 'TestCase',
+	#category : 'Bell-Logging-Tests',
+	#package : 'Bell-Logging-Tests'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 StandardStreamStructuredLoggerTest >> testStandardError [
 
 	| record |
@@ -17,7 +18,7 @@ StandardStreamStructuredLoggerTest >> testStandardError [
 	StandardStreamStructuredLogger onStandardError nextPut: record
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 StandardStreamStructuredLoggerTest >> testStandardErrorStreamLogger [
 
 	StandardStreamStructuredLogger onStandardError runFor: LogRecord during: [ 
@@ -27,7 +28,7 @@ StandardStreamStructuredLoggerTest >> testStandardErrorStreamLogger [
 		]
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 StandardStreamStructuredLoggerTest >> testStandardOutput [
 
 	| record |
@@ -37,7 +38,7 @@ StandardStreamStructuredLoggerTest >> testStandardOutput [
 	StandardStreamStructuredLogger onStandardOutput nextPut: record
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 StandardStreamStructuredLoggerTest >> testStandardOutputStreamLogger [
 
 	StandardStreamStructuredLogger onStandardOutput runFor: LogRecord during: [ 

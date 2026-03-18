@@ -1,1 +1,1 @@
-Package { #name : #'Bell-Logging' }
+Package { #name : 'Bell-Logging' }
