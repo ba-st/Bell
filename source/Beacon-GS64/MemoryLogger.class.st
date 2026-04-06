@@ -45,6 +45,12 @@ MemoryLogger >> announcer [
 	^ announcer
 ]
 
+{ #category : #accessing }
+MemoryLogger >> entries [
+	
+	^ self recordings 
+]
+
 { #category : #initialization }
 MemoryLogger >> initialize [
 	super initialize.
