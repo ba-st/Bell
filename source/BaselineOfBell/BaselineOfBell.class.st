@@ -56,15 +56,15 @@ BaselineOfBell >> setUpSUnitPackages: spec [
   spec for: #( #'pharo10.x' #'pharo11.x' #'pharo12.x' ) do: [
       spec
         package: 'Bell-Pharo-10-Extensions';
-        group: 'Dependent-SUnit-Extensions' with: 'Bell-SUnit'
+        group: 'Dependent-SUnit-Extensions' with: 'Bell-Pharo-10-Extensions'
     ]
 ]
 
 { #category : 'baselines' }
 BaselineOfBell >> setUpTestPackages: spec [
 
-	spec
-		package: 'Bell-Logging-Tests'
-		with: [ spec requires: #( 'Bell-Logging' 'Bell-SUnit' ) ];				
-		group: 'Tests' with: 'Bell-Logging-Tests'.
+  spec
+    package: 'Bell-Logging-Tests'
+    with: [ spec requires: #( 'Bell-Logging' 'Dependent-SUnit-Extensions' ) ];
+    group: 'Tests' with: 'Bell-Logging-Tests'
 ]
