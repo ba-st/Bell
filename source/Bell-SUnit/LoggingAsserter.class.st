@@ -25,14 +25,14 @@ LoggingAsserter class >> on: aTestCase [
 { #category : 'asserting' }
 LoggingAsserter >> assertLogRecordsMatch: anExpectedLogEntryCollection [
 
-	memoryLogger recordings with: anExpectedLogEntryCollection do: [ :record :expectedLogEntry | 
-		testCase assert: ( record printString includesSubstring: expectedLogEntry ) ]
+  self logRecords with: anExpectedLogEntryCollection do: [ :record :expectedLogEntry |
+      testCase assert: ( record printString includesSubstring: expectedLogEntry ) ]
 ]
 
 { #category : 'asserting' }
 LoggingAsserter >> assertLogRecordsMatchUsing: aRegexCollection [
 
-  memoryLogger recordings with: aRegexCollection do: [ :record :regexExpression |
+  self logRecords with: aRegexCollection do: [ :record :regexExpression |
       testCase
         assert: ( record printString matchesRegex: regexExpression )
         description:
@@ -47,6 +47,12 @@ LoggingAsserter >> initializeOn: aTestCase [
 	testCase := aTestCase
 ]
 
+{ #category : 'accessing' }
+LoggingAsserter >> logRecords [
+
+  ^ memoryLogger entries
+]
+
 { #category : 'running' }
 LoggingAsserter >> runMemoryLoggerDuring: aBlockClosure [
 
@@ -56,5 +62,6 @@ LoggingAsserter >> runMemoryLoggerDuring: aBlockClosure [
 { #category : 'running' }
 LoggingAsserter >> stopLoggers [
 
-  memoryLogger reset
+  memoryLogger reset.
+  MemoryLogger resetInstance
 ]

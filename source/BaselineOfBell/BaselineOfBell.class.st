@@ -1,10 +1,11 @@
 Class {
-	#name : #BaselineOfBell,
-	#superclass : #BaselineOf,
-	#category : #BaselineOfBell
+	#name : 'BaselineOfBell',
+	#superclass : 'BaselineOf',
+	#category : 'BaselineOfBell',
+	#package : 'BaselineOfBell'
 }
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfBell >> baseline: spec [
 
 	<baseline>
@@ -19,7 +20,7 @@ BaselineOfBell >> baseline: spec [
 			group: 'default' with: 'Development' ]
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfBell >> setUpDependencies: spec [
 			
 	spec
@@ -27,7 +28,7 @@ BaselineOfBell >> setUpDependencies: spec [
 		project: 'NeoJSON-Deployment' copyFrom: 'NeoJSON' with: [ spec loads: 'Deployment' ].
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfBell >> setUpDeploymentPackages: spec [
 
 	spec
@@ -36,7 +37,7 @@ BaselineOfBell >> setUpDeploymentPackages: spec [
 
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfBell >> setUpPackages: spec [
 
 	self
@@ -46,19 +47,24 @@ BaselineOfBell >> setUpPackages: spec [
 
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BaselineOfBell >> setUpSUnitPackages: spec [
 
-	spec
-		package: 'Bell-SUnit' with: [ spec requires: #( 'Bell-Logging' ) ];
-		group: 'Dependent-SUnit-Extensions' with: 'Bell-SUnit'
+  spec
+    package: 'Bell-SUnit' with: [ spec requires: #( 'Bell-Logging' ) ];
+    group: 'Dependent-SUnit-Extensions' with: 'Bell-SUnit'.
+  spec for: #( #'pharo10.x' #'pharo11.x' #'pharo12.x' ) do: [
+      spec
+        package: 'Bell-Pharo-10-Extensions';
+        group: 'Dependent-SUnit-Extensions' with: 'Bell-Pharo-10-Extensions'
+    ]
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfBell >> setUpTestPackages: spec [
 
-	spec
-		package: 'Bell-Logging-Tests'
-		with: [ spec requires: #( 'Bell-Logging' 'Bell-SUnit' ) ];				
-		group: 'Tests' with: 'Bell-Logging-Tests'.
+  spec
+    package: 'Bell-Logging-Tests'
+    with: [ spec requires: #( 'Bell-Logging' 'Dependent-SUnit-Extensions' ) ];
+    group: 'Tests' with: 'Bell-Logging-Tests'
 ]
