@@ -56,7 +56,7 @@ LoggingAsserter >> logRecords [
 { #category : 'running' }
 LoggingAsserter >> runMemoryLoggerDuring: aBlockClosure [
 
-  memoryLogger runDuring: aBlockClosure
+  memoryLogger runFor: LogRecord during: aBlockClosure
 ]
 
 { #category : 'running' }
